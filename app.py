@@ -58,7 +58,7 @@ def main():
 
 	choice = st.sidebar.selectbox("Menu", menu) # Menu selection
 
-	df = load_data("C:/Users/diogo/OneDrive/Ambiente de Trabalho/Github/Data-Engineering/london_organizations_crunchbase_nov_22.csv") # Load dataset
+	df = load_data("diogo90/Recommendation-System/london_organizations_crunchbase_nov_22.zip") # Load dataset
 
 	if choice == "Home":
 		st.subheader("Home")
