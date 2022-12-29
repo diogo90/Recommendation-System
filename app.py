@@ -10,7 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Load crunchbase data (sourced using the API in Nov. 22)
 
 def load_data(data):
-	df = pd.read_csv(data, usecols=[1,2], dtype={'properties.identifier.value': str,'properties.short_description': str}, nrows=100) # Select organization name and description columns
+	df = pd.read_csv(data, usecols=[1,2], sep=',', dtype={'properties.identifier.value': str,'properties.short_description': str}, nrows=100) # Select organization name and description columns
 	df.dropna(inplace=True) # Drop null values
 
 	return df 
