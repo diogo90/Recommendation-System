@@ -59,7 +59,7 @@ def main():
 
 	choice = st.sidebar.selectbox("Menu", menu) # Menu selection
 	
-	file_path = Path(__file__) / 'london_organizations_crunchbase_nov_22.csv'
+	file_path = Path(__file__).parents[0] / 'london_organizations_crunchbase_nov_22.csv'
 	
 	df = load_data(file_path) # Load dataset
 
