@@ -6,11 +6,12 @@ import streamlit.components.v1 as stc
 import pandas as pd 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from pathlib import Path
 
 # Load crunchbase data (sourced using the API in Nov. 22)
 
 def load_data(data):
-	df = pd.read_csv(data, usecols=[1,2], sep=';', dtype={'properties.identifier.value': str,'properties.short_description': str}, nrows=100) # Select organization name and description columns
+	df = pd.read_csv(data, usecols=[1,2], dtype={'properties.identifier.value': str,'properties.short_description': str}, nrows=100) # Select organization name and description columns
 	df.dropna(inplace=True) # Drop null values
 
 	return df 
@@ -57,8 +58,10 @@ def main():
 	menu = ["Home", "Recommender", "About"] # Define 3 menus
 
 	choice = st.sidebar.selectbox("Menu", menu) # Menu selection
-
-	df = load_data("london_organizations_crunchbase_nov_22.csv") # Load dataset
+	
+	file_path = Path(__file__) / 'london_organizations_crunchbase_nov_22.csv'
+	
+	df = load_data(file_path) # Load dataset
 
 	if choice == "Home":
 		st.subheader("Home")
