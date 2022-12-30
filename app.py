@@ -58,7 +58,7 @@ def main():
 
 	choice = st.sidebar.selectbox("Menu", menu) # Menu selection
 
-	df = load_data("https://github.com/diogo90/Recommendation-System/blob/34a0ef2411085f74b833d862862ba60ccb8a69ad/london_organizations_crunchbase_nov_22.csv") # Load dataset
+	df = load_data("london_organizations_crunchbase_nov_22.csv") # Load dataset
 
 	if choice == "Home":
 		st.subheader("Home")
