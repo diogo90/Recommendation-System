@@ -19,3 +19,9 @@ There are 51.6k organizations in total and the data file used is: london_organiz
 https://www.crunchbase.com/discover/organization.companies/c2580402b9b8ab2fbde87855c26115b3
 
 Even though I have collected more variables with the API script the only 2 used to create the cosine similarity matrix are the organization name and organization description.
+
+## Streamlit implementation
+
+The python code that creates the cosine similarity matrix and layout of the Streamlit app can be found in the file app.py. The app was deployed using Streamlit Cloud using Github. Please use the link below to access it:
+
+https://diogo90-recommendation-system-app-iob0aj.streamlit.app/
