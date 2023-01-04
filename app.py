@@ -66,7 +66,16 @@ def main():
 
 	if choice == "Home":
 		st.subheader("Scope")
-		st.text("Self-development project focused on gaining practical understanding of building a recommendation system using cosine similarity and deploying it with Streamlit. The aim is to develop an approach to find similar organisations based on their profile description on Crunchbase. The short profile organizations’ descriptions tend to be focused on the core business model of a company and the market they are addressing. The premise lies on the fact that if any two organizations are operating within the same market space and doing the same things, they will use similar industry vocabulary to describe what they do. Which will consequently lead to a high cosine similarity between them. To source organizations names and their description, I have used the Crunchbase API (details on Data Collection). Also, to limit the scope I have only collected data on organizations headquartered in London, UK.")
+		st.text("Self-development project focused on gaining practical understanding of building a")
+		st.text("recommendation system using cosine similarity and deploying it with Streamlit.")
+		st.text("The aim is to develop an approach to find similar organisations based on their profile")
+		st.text("description on Crunchbase. The short profile organizations’ descriptions tend to be focused")
+		st.text("on the core business model of a company and the market they are addressing. The premise")
+		st.text("lies on the fact that if any two organizations are operating within the same market space and")
+		st.text("doing the same things, they will use similar industry vocabulary to describe what they do.") 
+		st.text("Which will consequently lead to a high cosine similarity between them.")
+		st.text("To source organizations names and their description, I have used the Crunchbase API (details on Data Collection).")
+		st.text("Also, to limit the scope I have only collected data on organizations headquartered in London, UK.")
 		st.text("Below is a preview of the data sourced using the Crunchbase API (as off Nov. 22):")
 		st.dataframe(df.head(5))
 		st.text("Please head to the Recommender tab to test the tool")
