@@ -24,4 +24,4 @@ Even though I have collected more variables with the API script the only 2 used 
 
 The python code that creates the cosine similarity matrix and layout of the Streamlit app can be found in the file app.py. The app was deployed using Streamlit Cloud using Github. Please use the link below to access it:
 
-https://diogo90-recommendation-system-app-iob0aj.streamlit.app/
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://diogo90-recommendation-system-app-iob0aj.streamlit.app/)
