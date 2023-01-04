@@ -78,7 +78,7 @@ def main():
 		st.text("To source organizations names and their description, I have used the")
 		st.text("Crunchbase API (details on Data Collection). Also, to limit the scope")
 		st.text("I have only collected data on organizations headquartered in London, UK.")
-		st.markdown(<br />)
+		st.text(" \n")
 		st.text("Below is a preview of the data sourced using the Crunchbase API (as off Nov. 22):")
 		st.dataframe(df.head(5))
 		st.text("Please head to the Recommender tab to test the tool")
