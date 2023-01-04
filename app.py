@@ -11,7 +11,8 @@ from pathlib import Path
 # Load crunchbase data (sourced using the API in Nov. 22)
 
 def load_data(data):
-	df = pd.read_csv(data, usecols=[1,2], dtype={'properties.identifier.value': str,'properties.short_description': str}, nrows=10000) # Select organization name and description columns
+	# Select organization name and description columns
+	df = pd.read_csv(data, usecols=[1,2], dtype={'properties.identifier.value': str,'properties.short_description': str}, nrows=10000) 
 	df.dropna(inplace=True) # Drop null values
 
 	return df 
@@ -64,17 +65,27 @@ def main():
 	df = load_data(file_path) # Load dataset
 
 	if choice == "Home":
-		st.subheader("Home")
+		st.subheader("Scope")
+		st.text("Self-development project focused on gaining practical understanding of building a recommendation system using cosine similarity \ 
+		and deploying it with Streamlit. The aim is to develop an approach to find similar organisations based on their profile description on Crunchbase. \
+		The short profile organizations’ descriptions tend to be focused on the core business model of a company and the market they are addressing.\
+		The premise lies on the fact that if any two organizations are operating within the same market space and doing the same things, they will \
+		use similar industry vocabulary to describe what they do. Which will consequently lead to a high cosine similarity between them. \
+		To source organizations names and their description, I have used the Crunchbase API (details on Data Collection). Also, to limit the scope \
+		I have only collected data on organizations headquartered in London, UK.")
 		st.text("Below is a preview of the data sourced using the Crunchbase API (as off Nov. 22):")
 		st.dataframe(df.head(5))
+		st.text("Please head to the Recommender tab to test the tool")
 
 	elif choice == "Recommender":
 		st.subheader("Recomend Organizations")
 		cosine_sim = vectorize_text_to_cosine_matrix(df['properties.short_description'])
 
 		search_term = st.text_input("Search")   # Create inbox to input text
-		num_of_rec = st.sidebar.number_input("Number of recomendations", 3, 5, 3)  # Button to define number of courses one wants to recomend: 3 min; 5 max; 3 default
-		if st.button("Recomend"):		# Create button and sets trigger to define events when clicked
+		# Button to define number of courses one wants to recomend: 3 min; 5 max; 3 default
+		num_of_rec = st.sidebar.number_input("Number of recomendations", 3, 5, 3)  
+		# Create button and sets trigger to define events when clicked
+		if st.button("Recomend"):		
 			if search_term is not None: # Make sure there is a search term
 				try:
 					result = get_recommendation(search_term, cosine_sim, df, num_of_rec)
@@ -90,7 +101,8 @@ def main():
 						st.write("Score: ", rec_score)
 
 				except:
-					result = "Sorry, can't find similar Organizations to this one. Most likely because it was not listed on Crunchbase as an organization headquartered in London as off Nov. 2022"
+					result = "Sorry, can't find similar Organizations to this one. Most likely because it was \
+					not listed on Crunchbase as an organization headquartered in London as off Nov. 2022"
 					st.write(result)
 
 
