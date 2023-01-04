@@ -11,7 +11,7 @@ from pathlib import Path
 # Load crunchbase data (sourced using the API in Nov. 22)
 
 def load_data(data):
-	df = pd.read_csv(data, usecols=[1,2], dtype={'properties.identifier.value': str,'properties.short_description': str}, nrows=10000) # Select organization name and description columns
+	df = pd.read_csv(data, usecols=[1,2], dtype={'properties.identifier.value': str,'properties.short_description': str}, nrows=20000) # Select organization name and description columns
 	df.dropna(inplace=True) # Drop null values
 
 	return df 
