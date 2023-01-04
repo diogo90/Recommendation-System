@@ -10,3 +10,12 @@ To source organizations names and their description, I have used the Crunchbase 
 
 Please see below a diagram of all the steps involved:
 ![alt text](https://github.com/diogo90/Recommendation-System/blob/a24caebc458f7fa559af70a439336d14ee902d88/project_workflow.jpg)
+
+## Data Collection
+
+Data was collected using Crunchbase API (basic) and a detailed script with the process is uploaded in this repository with the name: data_collection_with_crunchbase_API.py. The data reflects all the organizations headquartered in London as off November 22 listed on Crunchbase. 
+
+There are 51.6k organizations in total and the data file used is: london_organizations_crunchbase_nov_22.csv. If you would like to cross-check some of these organizations please head to:
+https://www.crunchbase.com/discover/organization.companies/c2580402b9b8ab2fbde87855c26115b3
+
+Even though I have collected more variables with the API script the only 2 used to create the cosine similarity matrix are the organization name and organization description.
