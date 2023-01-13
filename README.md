@@ -25,3 +25,17 @@ Even though I have collected more variables with the API script the only 2 used 
 The python code that creates the cosine similarity matrix and layout of the Streamlit app can be found in the file app.py. The app was deployed using Streamlit Cloud using Github. Please use the link below to access it:
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://diogo90-recommendation-system-app-iob0aj.streamlit.app/)
+
+## Limitations
+
+If you check my app.py file in detail I am limiting the organizations file I am extracting from Crunchbase to 10k rows. That is because I am facing issues while
+creating the cosine similarity matrix - with the entire dataset of 52k organizations the matrix gets too big to be uploaded on Streamlit Share. 
+In case you find a solution to this problem please leave me a message on Github.
+
+## Thank Yous
+
+Appreciate all the content from YouTube channel https://www.youtube.com/@JCharisTech that allowed me to develop my skills in Streamlit and find some
+inspiration for this project.
+Appreciate the explanation on this article https://medium.com/priyanshumadan/extract-data-from-crunchbase-api-using-python-8e99ed6bc73e on how to use 
+Crunchbase API.
+
